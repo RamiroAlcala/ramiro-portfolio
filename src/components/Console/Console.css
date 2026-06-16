@@ -1,0 +1,332 @@
+/* Wrapper */
+.console-wrapper {
+  position: relative;
+  z-index: 10;
+  max-width: var(--console-max-width);
+  margin: 40px auto;
+  border: 1px solid var(--terminal-border);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--terminal-bg);
+  box-shadow:
+    0 0 40px rgba(0, 0, 0, 0.6),
+    0 0 2px rgba(0, 255, 245, 0.1);
+}
+
+/* Titlebar */
+.console-titlebar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  background: var(--terminal-header);
+  border-bottom: 1px solid var(--terminal-border);
+  user-select: none;
+}
+
+.titlebar-dots {
+  display: flex;
+  gap: 7px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.dot-close  { background: var(--modal-close); }
+.dot-minimize { background: var(--modal-minimize); }
+.dot-maximize { background: var(--modal-maximize); }
+
+.titlebar-text {
+  color: var(--terminal-comment);
+  font-size: 0.8rem;
+  font-family: var(--font-mono);
+}
+
+/* Body */
+.console-body {
+  padding: var(--console-padding);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Prompt line */
+.prompt-line {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  margin-bottom: 8px;
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+.prompt-user     { color: var(--terminal-prompt-user); font-weight: 700; }
+.prompt-separator { color: var(--terminal-text); }
+.prompt-path     { color: var(--terminal-prompt-path); font-weight: 500; }
+.prompt-dollar   { color: var(--terminal-text); }
+.prompt-command  { color: var(--terminal-text); font-weight: 400; }
+
+/* Sections */
+.section-block {
+  border-bottom: 1px solid rgba(42, 42, 74, 0.5);
+  padding-bottom: 24px;
+}
+
+.section-block:last-of-type {
+  border-bottom: none;
+}
+
+.section-output {
+  padding-left: 16px;
+  border-left: 2px solid var(--terminal-border);
+  margin-left: 4px;
+}
+
+.section-hint {
+  color: var(--terminal-comment);
+  font-size: 0.75rem;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+/* Header / whoami */
+.header-output {
+  border-left-color: var(--neon-cyan);
+}
+
+.header-name {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--neon-cyan);
+  margin-bottom: 4px;
+  text-shadow: 0 0 12px rgba(0, 255, 245, 0.3);
+}
+
+.header-title {
+  font-size: 0.95rem;
+  color: var(--terminal-prompt-user);
+  margin-bottom: 12px;
+}
+
+.header-summary {
+  font-size: 0.85rem;
+  color: var(--terminal-text);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.header-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  font-size: 0.8rem;
+  color: var(--terminal-comment);
+}
+
+.header-contact a {
+  color: var(--terminal-link);
+}
+
+/* Entries (educación, experiencia, proyectos) */
+.entry {
+  margin-bottom: 16px;
+}
+
+.entry:last-child {
+  margin-bottom: 0;
+}
+
+.entry-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 2px;
+}
+
+.entry-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--terminal-accent);
+}
+
+.entry-period {
+  font-size: 0.75rem;
+  color: var(--terminal-comment);
+  white-space: nowrap;
+}
+
+.entry-subtitle {
+  font-size: 0.8rem;
+  color: var(--terminal-text);
+  margin-bottom: 6px;
+}
+
+.status-badge {
+  color: var(--terminal-prompt-user);
+  font-weight: 500;
+}
+
+.entry-description {
+  font-size: 0.82rem;
+  color: var(--terminal-text);
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+
+.entry-details {
+  list-style: none;
+  padding: 0;
+}
+
+.entry-details li {
+  font-size: 0.8rem;
+  color: var(--terminal-text);
+  padding-left: 16px;
+  position: relative;
+  margin-bottom: 3px;
+  line-height: 1.5;
+}
+
+.entry-details li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--terminal-prompt-user);
+}
+
+/* Skills */
+.skill-group {
+  margin-bottom: 12px;
+}
+
+.skill-group:last-child {
+  margin-bottom: 0;
+}
+
+.skill-category {
+  font-size: 0.8rem;
+  color: var(--terminal-warning);
+  font-weight: 600;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.skill-tag {
+  font-size: 0.73rem;
+  padding: 3px 10px;
+  background: rgba(0, 255, 245, 0.08);
+  border: 1px solid rgba(0, 255, 245, 0.2);
+  border-radius: 4px;
+  color: var(--terminal-accent);
+  white-space: nowrap;
+}
+
+.tag-small {
+  font-size: 0.7rem;
+  padding: 2px 8px;
+}
+
+/* Certificaciones */
+.cert-entry {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  margin-bottom: 4px;
+  font-size: 0.82rem;
+  border-radius: 4px;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.cert-clickable {
+  cursor: pointer;
+}
+
+.cert-clickable:hover {
+  background: rgba(0, 255, 245, 0.06);
+  box-shadow: inset 0 0 0 1px rgba(0, 255, 245, 0.15);
+}
+
+.cert-clickable:focus-visible {
+  outline: 1px solid var(--neon-cyan);
+  outline-offset: 2px;
+}
+
+.cert-icon  { flex-shrink: 0; }
+.cert-name  { color: var(--terminal-accent); font-weight: 500; }
+.cert-issuer { color: var(--terminal-comment); font-size: 0.75rem; }
+.cert-date  { color: var(--terminal-comment); font-size: 0.72rem; margin-left: auto; white-space: nowrap; }
+
+/* Idiomas */
+.lang-entry {
+  font-size: 0.82rem;
+  margin-bottom: 4px;
+}
+
+.lang-name {
+  color: var(--terminal-accent);
+  font-weight: 600;
+}
+
+/* Footer */
+.console-footer {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding-top: 8px;
+}
+
+.console-footer .prompt-line {
+  margin-bottom: 0;
+}
+
+.cursor-blink {
+  color: var(--terminal-prompt-user);
+  animation: blink 1s step-end infinite;
+  font-size: 0.85rem;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .console-wrapper {
+    margin: 16px 8px;
+    border-radius: 6px;
+  }
+
+  .console-body {
+    padding: 16px;
+    gap: 22px;
+  }
+
+  .header-name {
+    font-size: 1.25rem;
+  }
+
+  .entry-header {
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .cert-entry {
+    flex-wrap: wrap;
+  }
+
+  .cert-date {
+    margin-left: 0;
+  }
+}

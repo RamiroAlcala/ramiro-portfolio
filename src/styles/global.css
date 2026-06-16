@@ -1,0 +1,104 @@
+/* ============================================================
+   VARIABLES GLOBALES - Tema PCB + Kali Linux
+   ============================================================ */
+:root {
+  /* PCB Background */
+  --pcb-bg: #0a0e14;
+  --pcb-trace: #1a3a2a;
+  --pcb-trace-lit: #2d5a3d;
+  --pcb-pad: #1e3328;
+
+  /* Electrón / Neón */
+  --neon-cyan: #00fff5;
+  --neon-glow: rgba(0, 255, 245, 0.6);
+  --neon-trail: rgba(0, 255, 245, 0.15);
+
+  /* Kali Terminal */
+  --terminal-bg: #1a1a2e;
+  --terminal-header: #16162a;
+  --terminal-border: #2a2a4a;
+  --terminal-text: #e0e0e0;
+  --terminal-prompt-user: #00ff88;
+  --terminal-prompt-path: #5c9eff;
+  --terminal-comment: #6a6a8a;
+  --terminal-accent: #00fff5;
+  --terminal-link: #5eead4;
+  --terminal-warning: #fbbf24;
+
+  /* Modal Linux Window */
+  --modal-titlebar: #2d2d4e;
+  --modal-close: #ff5f57;
+  --modal-minimize: #ffbd2e;
+  --modal-maximize: #27c93f;
+  --modal-overlay: rgba(0, 0, 0, 0.85);
+
+  /* Tipografías */
+  --font-mono: "Fira Code", "JetBrains Mono", "Cascadia Code", monospace;
+
+  /* Espaciado */
+  --console-max-width: 860px;
+  --console-padding: 24px;
+}
+
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-mono);
+  background-color: var(--pcb-bg);
+  color: var(--terminal-text);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* Scrollbar personalizada tipo terminal */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--pcb-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--terminal-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--terminal-comment);
+}
+
+/* ============================================================
+   SELECCIÓN DE TEXTO
+   ============================================================ */
+::selection {
+  background: rgba(0, 255, 245, 0.25);
+  color: #fff;
+}
+
+/* ============================================================
+   UTILIDADES
+   ============================================================ */
+a {
+  color: var(--terminal-link);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--neon-cyan);
+  text-shadow: 0 0 8px var(--neon-glow);
+}
