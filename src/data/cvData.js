@@ -20,7 +20,7 @@ const cvData = {
         "Facultad de Ingeniería — Universidad Nacional de San Juan (UNSJ)",
       degree: "Ingeniería Electrónica",
       period: "En curso",
-      status: "+60% de la carrera aprobada",
+      status: "+70% de la carrera aprobada",
       details: [],
     },
   ],

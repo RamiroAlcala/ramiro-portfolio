@@ -100,7 +100,7 @@ export default function ConsoleWindow({ onCertificateClick, setIsOverConsole }) 
           ))}
         </SectionBlock>
 
-        <SectionBlock sectionName="certificaciones" user={profile.username} host={profile.hostname}>
+        <SectionBlock sectionName="certificados" user={profile.username} host={profile.hostname}>
           <p className="section-hint">// click en un certificado para ver el archivo</p>
           {courses.map((cert) => (
             <div
